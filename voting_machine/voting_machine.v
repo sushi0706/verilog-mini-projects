@@ -1,15 +1,17 @@
-module voting_machine(input clk,
-							 input reset,
-							 input [1:0] mode,
-							 input in_candidate_1,
-							 input in_candidate_2,
-							 input in_candidate_3,
-							 output [7:0] count_candidate_1,
-							 output [7:0] count_candidate_2,
-							 output [7:0] count_candidate_3,
-							 output candidate_1,
-							 output candidate_2,
-							 output candidate_3);
+module voting_machine(
+	 input clk,
+	 input reset,
+	 input [1:0] mode,
+	 input in_candidate_1,
+	 input in_candidate_2,
+	 input in_candidate_3,
+	 output [7:0] count_candidate_1,
+	 output [7:0] count_candidate_2,
+	 output [7:0] count_candidate_3,
+	 output candidate_1,
+	 output candidate_2,
+	 output candidate_3
+);
 	
 	parameter IDLE=2'b00, CAST_VOTE=2'b01, TALLY_VOTE=2'b10;
 	reg [1:0] state, next_state;
