@@ -21,23 +21,23 @@ module fifo #(parameter WIDTH=8, DEPTH=8)(
 ### Module
 ```
 module alarm_clock(
-  input clk,					    //10Hz clock
- input areset,			      //Asynchronous reset
- input [1:0] hr_in_1,	    //Most significant input hour digit
- input [3:0] hr_in_0,	    //Least significant input hour digit
- input [3:0] min_in_1,	  //Most significant input minute digit
- input [3:0] min_in_0,	  //Least significant input minute digit
- input LD_alarm,		      //signal to set alarm
- input LD_time,			      //signal to set time 
- input STOP_alarm, 		    //signal to stop alarm
+  input clk,				//10Hz clock 
+ input areset,			        //Asynchronous reset
+ input [1:0] hr_in_1,	    		//Most significant input hour digit
+ input [3:0] hr_in_0,	    		//Least significant input hour digit
+ input [3:0] min_in_1,	  		//Most significant input minute digit
+ input [3:0] min_in_0,	  		//Least significant input minute digit
+ input LD_alarm,		        //signal to set alarm
+ input LD_time,			        //signal to set time 
+ input STOP_alarm, 		    	//signal to stop alarm
  input AL_ON,			        //signal if alarm function is enable or not
- output [1:0] hr_out_1,	  //Most significant output hour digit
- output [3:0] hr_out_0,   //Least significant output hour digit
- output [3:0] min_out_1,  //Most significant output minute digit
- output [3:0] min_out_0,  //Least significant output minute digit
- output [3:0] sec_out_1,  //Most significant output second digit
- output [3:0] sec_out_0,  //Least significant output second digit
- output reg Alarm);		    //alarm signal
+ output [1:0] hr_out_1,	  		//Most significant output hour digit
+ output [3:0] hr_out_0,   		//Least significant output hour digit
+ output [3:0] min_out_1,  		//Most significant output minute digit
+ output [3:0] min_out_0,  		//Least significant output minute digit
+ output [3:0] sec_out_1,  		//Most significant output second digit
+ output [3:0] sec_out_0,  		//Least significant output second digit
+ output reg Alarm);		    	//alarm signal
 ```
 ### Waveform
 ![image](https://github.com/sushi0706/verilog-mini-projects/assets/170224108/721c51b0-e9d3-4f41-9940-d46b65515245)  
@@ -92,3 +92,36 @@ module traffic_light_controller(
 ![image](https://github.com/sushi0706/verilog-mini-projects/assets/170224108/5cb53a2d-4765-4e55-9185-96938bdab883)  
 
 ## Vending Machine
+### Module
+```
+module vending_machine(
+	input clk,
+	input reset,
+	input [1:0] product,
+	input [5:0] amount,
+	output reg product_1, product_2, product_3,
+	output reg [4:0] balance
+	);
+```
+### Waveform
+![image](https://github.com/sushi0706/verilog-mini-projects/assets/170224108/cb64ffaf-59db-471d-9321-324599456b2e)  
+
+## Voting Machine
+### Module
+```
+module voting_machine(
+	 input clk,
+	 input reset,
+	 input [1:0] mode,
+	 input in_candidate_1,
+	 input in_candidate_2,
+	 input in_candidate_3,
+	 output [7:0] count_candidate_1,
+	 output [7:0] count_candidate_2,
+	 output [7:0] count_candidate_3,
+	 output candidate_1,
+	 output candidate_2,
+	 output candidate_3);
+```
+### Waveform
+![image](https://github.com/sushi0706/verilog-mini-projects/assets/170224108/31ff08fe-cd77-4844-a668-3ce257fb0554)
