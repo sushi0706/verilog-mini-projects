@@ -1,20 +1,21 @@
-module alarm_clock(input clk,					//10Hz clock
-						 input areset,			//Asynchronous reset
-						 input [1:0] hr_in_1,	//Most significant input hour digit
-						 input [3:0] hr_in_0,	//Least significant input hour digit
-						 input [3:0] min_in_1,	//Most significant input minute digit
-						 input [3:0] min_in_0,	//Least significant input minute digit
- 						 input LD_alarm,		//signal to set alarm
-						 input LD_time,			//signal to set time 
-						 input STOP_alarm, 		//signal to stop alarm
-						 input AL_ON,			//signal if alarm function is enable or not
-						 output [1:0] hr_out_1,	//Most significant output hour digit
-						 output [3:0] hr_out_0, //Least significant output hour digit
-						 output [3:0] min_out_1,//Most significant output minute digit
-						 output [3:0] min_out_0,//Least significant output minute digit
-						 output [3:0] sec_out_1,//Most significant output second digit
-						 output [3:0] sec_out_0,//Least significant output second digit
-						 output reg Alarm);		//alarm signal
+module alarm_clock(
+  input clk,				//10Hz clock 
+  input areset,			        //Asynchronous reset
+  input [1:0] hr_in_1,	    		//Most significant input hour digit
+  input [3:0] hr_in_0,	    		//Least significant input hour digit
+  input [3:0] min_in_1,	  		//Most significant input minute digit
+  input [3:0] min_in_0,	  		//Least significant input minute digit
+  input LD_alarm,		        //signal to set alarm
+  input LD_time,			//signal to set time 
+  input STOP_alarm, 		    	//signal to stop alarm
+  input AL_ON,			        //signal if alarm function is enable or not
+  output [1:0] hr_out_1,	 	//Most significant output hour digit
+  output [3:0] hr_out_0,   		//Least significant output hour digit
+  output [3:0] min_out_1,  		//Most significant output minute digit
+  output [3:0] min_out_0,  		//Least significant output minute digit
+  output [3:0] sec_out_1,  		//Most significant output second digit
+  output [3:0] sec_out_0,  		//Least significant output second digit
+  output reg Alarm);		    	//alarm signal
 						 
 	reg [5:0] hr_temp, min_temp, sec_temp; 
 	reg [1:0] hr_al_1, hr_curr_1;
