@@ -1,6 +1,7 @@
-module sequence_detector(input clk,
-								 input [3:0] in,
-								 output out);
+module sequence_detector(
+	input clk,
+	input [3:0] in,
+	output out);
 		
 	parameter IDLE=3'b000, ONE=3'b001, ZERO=3'b010, NINE=3'b011, FOUR=3'b100;
 	reg [2:0] state=IDLE,next_state;
