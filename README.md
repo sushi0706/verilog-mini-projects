@@ -1,5 +1,5 @@
 # Verilog Mini Projects
-This repository currently consists of 8 mini projects.  
+This repository currently consists of 9 mini projects.  
 ## FIFO
 ### Module
 ```
@@ -41,6 +41,18 @@ module alarm_clock(
 ```
 ### Waveform
 ![image](https://github.com/sushi0706/verilog-mini-projects/assets/170224108/721c51b0-e9d3-4f41-9940-d46b65515245)  
+
+## Barrel Shifter
+### Module
+```
+module barrel_shifter #(parameter WIDTH=8)(
+    input [WIDTH-1:0] in,
+    input [2:0] shift_amt,
+    output reg [WIDTH-1:0] out
+);
+```
+### Waveform
+![image](https://github.com/sushi0706/verilog-mini-projects/assets/170224108/9b91efcb-0783-49b4-819b-2b400e36b551)
 
 ## Booth Multiplier
 ### Module
