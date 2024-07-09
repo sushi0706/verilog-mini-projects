@@ -7,9 +7,9 @@ module carry_lookahead_adder(
 	output carry_out
 	);
 	
-	wire p0, p1, p2, p3;			//carry propgate
-	wire g0, g1, g2, g3;			//carry generate
-	wire c0, c1, c2;			//internal carry
+	wire p0, p1, p2, p3;		 //carry propgate
+	wire g0, g1, g2, g3;		 //carry generate
+	wire c0, c1, c2;			    //internal carry
 	
 	assign p0 = (a[0] ^ b[0]);
 	assign p1 = (a[1] ^ b[1]);
