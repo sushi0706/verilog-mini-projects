@@ -1,5 +1,5 @@
 # Verilog Mini Projects
-This repository currently consists of 9 mini projects.  
+This repository currently consists of 10 mini projects.  
 ## FIFO
 ### Module
 ```
@@ -16,6 +16,21 @@ module fifo #(parameter WIDTH=8, DEPTH=8)(
 ```
 ### Waveform
 ![image](https://github.com/sushi0706/verilog-mini-projects/assets/170224108/09cb816c-5607-417b-9ea9-61c036733d91)
+
+## LFSR
+### Module
+```
+module lfsr #(parameter DATA_WIDTH = 5)(
+    input clk,
+    input enable,
+    input load,
+    input [DATA_WIDTH-1:0] data_in,
+    output [DATA_WIDTH-1:0] data_out,
+    output done
+);
+```
+### Waveform
+![image](https://github.com/user-attachments/assets/368d3d9e-3b91-4d4d-9002-9bf0b913be0d)
 
 ## Alarm Clock
 ### Module
