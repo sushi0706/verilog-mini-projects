@@ -17,7 +17,7 @@ module voting_machine(
 	reg [1:0] state, next_state;
 	reg [7:0] vote_1, vote_2, vote_3;
 	
-	always@(posedge clk) begin
+	always@(*) begin
 		case(state) 
 			IDLE: begin
 				if(mode==2'b01) next_state=CAST_VOTE;
@@ -39,22 +39,22 @@ module voting_machine(
 	
 	always@(posedge clk) begin
 		if(reset) begin
-			vote_1=8'd0;
-			vote_2=8'd0;
-			vote_3=8'd0;
+			vote_1<=8'd0;
+			vote_2<=8'd0;
+			vote_3<=8'd0;
 		end
 		else begin
-			vote_1=vote_1+in_candidate_1;
-			vote_2=vote_2+in_candidate_2;
-			vote_3=vote_3+in_candidate_3;
+			vote_1<=vote_1+in_candidate_1;
+			vote_2<=vote_2+in_candidate_2;
+			vote_3<=vote_3+in_candidate_3;
 		end
 	end 
 	
-	assign candidate_1=in_candidate_1;
-	assign candidate_2=in_candidate_2;
-	assign candidate_3=in_candidate_3;
-	assign count_candidate_1=(state==TALLY_VOTE)?vote_1:8'd0;
-	assign count_candidate_2=(state==TALLY_VOTE)?vote_2:8'd0;
-	assign count_candidate_3=(state==TALLY_VOTE)?vote_3:8'd0;
+	assign candidate_1 = in_candidate_1;
+	assign candidate_2 = in_candidate_2;
+	assign candidate_3 = in_candidate_3;
+	assign count_candidate_1 = (state==TALLY_VOTE) ? vote_1 : 8'd0;
+	assign count_candidate_2 = (state==TALLY_VOTE) ? vote_2 : 8'd0;
+	assign count_candidate_3 = (state==TALLY_VOTE) ? vote_3 : 8'd0;
 	
 endmodule 
