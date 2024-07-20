@@ -9,17 +9,18 @@ module voting_machine_tb;
 	wire candidate_1, candidate_2, candidate_3;
 	
 	voting_machine uut(.clk(clk),
-							 .reset(reset),
-							 .mode(mode),
-							 .in_candidate_1(in_candidate_1),
-							 .in_candidate_2(in_candidate_2),
-							 .in_candidate_3(in_candidate_3),
-							 .count_candidate_1(count_candidate_1),
-							 .count_candidate_2(count_candidate_2),
-							 .count_candidate_3(count_candidate_3),
-							 .candidate_1(candidate_1),
-							 .candidate_2(candidate_2),
-							 .candidate_3(candidate_3));
+			   .reset(reset),
+			   .mode(mode),
+			   .in_candidate_1(in_candidate_1),
+			   .in_candidate_2(in_candidate_2),
+			   .in_candidate_3(in_candidate_3),
+			   .count_candidate_1(count_candidate_1),
+			   .count_candidate_2(count_candidate_2),
+			   .count_candidate_3(count_candidate_3),
+			   .candidate_1(candidate_1),
+			   .candidate_2(candidate_2),
+			   .candidate_3(candidate_3)
+	);
 							 
 	initial begin
 		clk=0;
