@@ -41,7 +41,7 @@ module fifo #(parameter WIDTH=8, DEPTH=8)(
 		end
 	end 
 	
-	assign full=(wr_ptr<DEPTH)?1'b0:1'b1;
-	assign empty=(rd_ptr<wr_ptr)?1'b0:1'b1;
+	assign full = (wr_ptr + 1 == rd_ptr) ? 1'b1 : 1'b0;
+	assign empty = (rd_ptr == wr_ptr) ? 1'b1 : 1'b0;
 	
 endmodule 
