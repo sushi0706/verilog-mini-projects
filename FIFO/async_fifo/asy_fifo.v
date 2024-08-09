@@ -30,7 +30,7 @@ module asy_fifo #(parameter WIDTH=8, DEPTH=16)(
             rd_ptr_bin <= 0;
         end else begin
             if(read) begin
-                if(!empty) begin
+                if(empty!==1) begin
                     data_out <= FIFO[rd_ptr_bin];
                     rd_ptr_bin <= rd_ptr_bin + 1;
                 end else $display("time=%0t -> underflow",$time);
@@ -50,7 +50,7 @@ module asy_fifo #(parameter WIDTH=8, DEPTH=16)(
             wr_ptr_bin <= 0;
         end else begin
             if(write) begin
-                if(!full) begin
+                if(full!==1) begin
                     FIFO[wr_ptr_bin] <= data_in;
                     wr_ptr_bin <= wr_ptr_bin + 1;
                 end else $display("time=%0t -> overflow",$time);
