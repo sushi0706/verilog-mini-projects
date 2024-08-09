@@ -36,17 +36,17 @@ module asy_fifo_tb;
 
     task write_data(input [WIDTH-1:0] data);
         begin
-            @(posedge wr_clk);
+            @(negedge wr_clk);
             data_in = data;
             write = 1;
-            @(posedge wr_clk);
+            @(negedge wr_clk);
             write = 0;
         end
     endtask
 
     task read_data();
         begin
-            @(posedge rd_clk);
+            @(negedge rd_clk);
             read = 1;
             @(negedge rd_clk);
             read = 0;
