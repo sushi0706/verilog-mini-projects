@@ -34,7 +34,8 @@ module asy_fifo #(parameter WIDTH=8, DEPTH=16)(
 );
 ```
 #### Waveform
-![image](https://github.com/user-attachments/assets/054248b9-29d9-4ae4-a911-ff9740813c63)
+![image](https://github.com/user-attachments/assets/4f104b62-c438-465d-b537-315a83cd33d2)
+
 
 ## LFSR
 ### Module
